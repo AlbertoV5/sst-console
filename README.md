@@ -67,7 +67,7 @@ Deploy one Console installation in a dedicated AWS control account. It can then 
 6. Connect each workload account through **Connect account** in Console. This opens AWS CloudFormation using deployment-specific connector template. Connected accounts publish SST state changes to control account, letting Console index their apps and stages.
 
 > **Warning**
-> Current connector creates `SSTConsoleRole` with `AdministratorAccess` in every connected workload account. Review template and its permissions before deployment. Project is early work; use isolated, non-production AWS accounts only.
+> Current connector creates `SSTConsoleRole` with a scoped inline policy: `ssm:GetParameter` on `/sst/bootstrap`, `kms:Decrypt` via SSM only, read access to `app/*` in `sst-state-*` buckets, and `s3:Get/PutBucketNotification` on those buckets (to enable EventBridge state events). Review template and its permissions before deployment. Project is early work; use isolated, non-production AWS accounts only.
 
 ### Update
 

@@ -5,7 +5,7 @@
     "": {
       "name": "sst-console-workspace",
       "dependencies": {
-        "sst": "^4.16.0",
+        "sst": "npm:@sst-community/sst@4.20.0",
       },
       "devDependencies": {
         "@tsconfig/node20": "^20.1.4",
@@ -152,7 +152,7 @@
 
     "@aws-sdk/xml-builder": ["@aws-sdk/xml-builder@3.972.41", "", { "dependencies": { "@smithy/types": "^4.19.0", "tslib": "^2.6.2" } }, "sha512-ctjVSyCMegrWfXlx6VqzSBFI6UqmQ5ZlnfMhdLIiWmhoH8UAQxSCP5N3OpG7X3k4LnS7ou74C4mt20+bfTW2aQ=="],
 
-    "@aws/durable-execution-sdk-js": ["@aws/durable-execution-sdk-js@1.0.2", "", { "dependencies": { "@aws-sdk/client-lambda": "^3.943.0" } }, "sha512-KIYBVqV9gArkWdPEDYOjJqLlO+NecmCXOXadNBlOspJTmqztwuiyb6aZc468bYWSGuL4Me/gyTIK97ubkwFNCw=="],
+    "@aws/durable-execution-sdk-js": ["@aws/durable-execution-sdk-js@2.6.0", "", { "dependencies": { "@aws-sdk/client-lambda": "^3.1014.0" } }, "sha512-3UlQEVC4NCwr8npJIkndQZ9SjpTF45SMT7Y/vJSvb8g4XmJirK9H3IoIlTLAZ01JMeOw3FEvzGSAKXgzX+jLpA=="],
 
     "@aws/lambda-invoke-store": ["@aws/lambda-invoke-store@0.3.0", "", {}, "sha512-sl4Bm6yiMNYrZKkqqDFWN0UfnWhlS8ivKxrYl+6t0gCLrqr8y3B2IqZZbFRkfaVVp7C/baApyh71P+LeE1A2sQ=="],
 
@@ -403,6 +403,22 @@
     "@smithy/signature-v4": ["@smithy/signature-v4@5.7.3", "", { "dependencies": { "@smithy/core": "^3.33.3", "@smithy/types": "^4.17.2", "tslib": "^2.6.2" } }, "sha512-7ImGm+FkHRLcBaRttIAMZ6bzJZWb2cJGoYjq46F2UjycujWzrL9GEN9h4w7eQyXJYnltrUhxbbieBAIRrdqpow=="],
 
     "@smithy/types": ["@smithy/types@4.19.0", "", { "dependencies": { "tslib": "^2.6.2" } }, "sha512-r7jh49VJxGerfAcTQA6gXcKc+98zOp/tqRwzYjgOE+iSQsP6cEU1hq2QzbuipmP68QtYdY9wKEhiCQZIzHgZ4Q=="],
+
+    "@sst-community/sst-darwin-arm64": ["@sst-community/sst-darwin-arm64@4.20.0", "", { "os": "darwin", "cpu": "arm64" }, "sha512-mGZs+PEhJ4Qbc8aY+vlBmde+NFQd9TDUPcn5Ar1MxNtfrwxsJoDVX0tk7xYFpWBZc1NJDoldz+vGfYi9LNaPHA=="],
+
+    "@sst-community/sst-darwin-x64": ["@sst-community/sst-darwin-x64@4.20.0", "", { "os": "darwin", "cpu": "x64" }, "sha512-8Dd3i7HK2FBcGeJdoo8jfNnthECWhmJqJbTpik+lwK9iYQ/K59buJpgE2VZTdRpFwaaWKoVwO+F5y+32HlYXUw=="],
+
+    "@sst-community/sst-linux-arm64": ["@sst-community/sst-linux-arm64@4.20.0", "", { "os": "linux", "cpu": "arm64" }, "sha512-cAwszMkgZKALHht0jwwV6QkanCeiFHQeRG7MitIURXRewjGSs2JrALCO91MwweZbvy0gVhT7jka7lUmmuxOvkA=="],
+
+    "@sst-community/sst-linux-x64": ["@sst-community/sst-linux-x64@4.20.0", "", { "os": "linux", "cpu": "x64" }, "sha512-DEY2YzAQ4j/o+dXmUxUED88nnNr0SdhCsA6a83CCSvpdb8F2F19qQ7eahiKZb1X4qn7+cj60I++Dj2WMKqq05Q=="],
+
+    "@sst-community/sst-linux-x86": ["@sst-community/sst-linux-x86@4.20.0", "", { "os": "linux", "cpu": "none" }, "sha512-yHeBE43l/fyQcTjcsQw+Bgz5Lrhh90hFtj1Ypra05mKyA816VF6ujZLCP2+f25dJTFj/NTcTGFsswwWOUAn/Cw=="],
+
+    "@sst-community/sst-win32-arm64": ["@sst-community/sst-win32-arm64@4.20.0", "", { "os": "win32", "cpu": "arm64" }, "sha512-4XLyNqFtvrDU00PkU5mEBtw+cInMJihVZB9RwxAkmXCSUDAhI2/j8c5MRz8ULGReA3JPQBO1vP0q9JX75pbviA=="],
+
+    "@sst-community/sst-win32-x64": ["@sst-community/sst-win32-x64@4.20.0", "", { "os": "win32", "cpu": "x64" }, "sha512-yLl2dFvo4sje30wMgYZtUJTgXh1B6kfYos6KO/w7vfdOdKi2RWYz4yHUXJG3/YobHsf+ouCHNQipDLBsrB1nGA=="],
+
+    "@sst-community/sst-win32-x86": ["@sst-community/sst-win32-x86@4.20.0", "", { "os": "win32", "cpu": "none" }, "sha512-ymoYKqScWHkC5dyS40g0MTyMyUGQZFhqrkNFJ+3FNmtVu2X5j+64hYJ8WdS1SDFDBCuuvpokNigrzZwiuwRS9w=="],
 
     "@sst-console/sdk": ["@sst-console/sdk@workspace:packages/sdk"],
 
@@ -1002,23 +1018,7 @@
 
     "space-separated-tokens": ["space-separated-tokens@2.0.2", "", {}, "sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q=="],
 
-    "sst": ["sst@4.17.1", "", { "dependencies": { "@aws/durable-execution-sdk-js": "1.0.2", "aws4fetch": "1.0.18", "jose": "5.2.3", "openid-client": "5.6.4" }, "optionalDependencies": { "sst-darwin-arm64": "4.17.1", "sst-darwin-x64": "4.17.1", "sst-linux-arm64": "4.17.1", "sst-linux-x64": "4.17.1", "sst-linux-x86": "4.17.1", "sst-win32-arm64": "4.17.1", "sst-win32-x64": "4.17.1", "sst-win32-x86": "4.17.1" }, "bin": { "sst": "bin/sst.mjs" } }, "sha512-06z0R8MICyvlsMAnPhQSga0JyijwlxwFXatnPtPA1h38PjSafrVR7bUhVIHFmUAtDLNC8hTlR/KMbKBlKGrRnQ=="],
-
-    "sst-darwin-arm64": ["sst-darwin-arm64@4.17.1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-Y9qZTBk4Fcwba+td+Dz3lz0wT9pQIbkJ5JqNfU4UwaVQtA58kz02F/BluhACi0vpI7PJULY7Tp1orHg86iy9+w=="],
-
-    "sst-darwin-x64": ["sst-darwin-x64@4.17.1", "", { "os": "darwin", "cpu": "x64" }, "sha512-TCU/H51vhQo+5QwsPIsiODlM54OS3Xai8FThcmX9H4git9Z/gPRLdWGKO+KSRB5Mrbm4z1R+pLqWyuuoNA4W6g=="],
-
-    "sst-linux-arm64": ["sst-linux-arm64@4.17.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-LwSl1hOEuRx1nODr9QRKZAo8hrTOS/BBhZdGoAIwsVArmZurqbY1VKaVk6DSbP+qUnGPPgdEMpb1PpfdJfX/Xw=="],
-
-    "sst-linux-x64": ["sst-linux-x64@4.17.1", "", { "os": "linux", "cpu": "x64" }, "sha512-DtIm3XkpzWb9yS4ZSgxg5KuOHRHhBk66y9lzVw6E/GBfUDdVOES2pbQUuFHuAq2tPJpbzuxGH7trdylAGD+TxA=="],
-
-    "sst-linux-x86": ["sst-linux-x86@4.17.1", "", { "os": "linux", "cpu": "none" }, "sha512-I2dMWy9zU2V1H6NX3TE1ckl8BbXm/1rcPyxRJCe2TBYUgucqhT1q4je3OAOjBfUnBSv7arxm5tSrYZ0Z9I3bYQ=="],
-
-    "sst-win32-arm64": ["sst-win32-arm64@4.17.1", "", { "os": "win32", "cpu": "arm64" }, "sha512-iGWZC6vCI2verOnjLxRLeXNsZdxvVKJlgXO0zI4vtw3cbd+PbCU2Q7uj6miu0nlNHhsy+v0C3eL/aKu3Sk7V0A=="],
-
-    "sst-win32-x64": ["sst-win32-x64@4.17.1", "", { "os": "win32", "cpu": "x64" }, "sha512-S9vpQwF24syg2A2+Sb+STejN8pfVv/l2LIZTFHeQOrMeLPIld3Uz9fQPakXCa3FrT1/i+m/UWWORXIJUeNBe+g=="],
-
-    "sst-win32-x86": ["sst-win32-x86@4.17.1", "", { "os": "win32", "cpu": "none" }, "sha512-CTniRCdMGKVBZ4RB4cJbwJS1YH2d9vmCEzrbETr8a6BtlZ7gD4DDHf3RuG7oZ9MumVerbTuxhi7faz7uJ0UjVw=="],
+    "sst": ["@sst-community/sst@4.20.0", "", { "dependencies": { "@aws/durable-execution-sdk-js": "2.6.0", "aws4fetch": "1.0.18", "jose": "5.2.3", "openid-client": "5.6.4" }, "optionalDependencies": { "@sst-community/sst-darwin-arm64": "4.20.0", "@sst-community/sst-darwin-x64": "4.20.0", "@sst-community/sst-linux-arm64": "4.20.0", "@sst-community/sst-linux-x64": "4.20.0", "@sst-community/sst-linux-x86": "4.20.0", "@sst-community/sst-win32-arm64": "4.20.0", "@sst-community/sst-win32-x64": "4.20.0", "@sst-community/sst-win32-x86": "4.20.0" }, "bin": { "sst": "bin/sst.mjs" } }, "sha512-TViNiypebGuqA5yNM3NYvtSxuAXhmEKO3AaSEQOdabaLv0YPWiCCoi8AqWEI3ueqFQRH8sCnGPV32vdiirA20g=="],
 
     "stack-trace": ["stack-trace@1.0.0", "", {}, "sha512-H6D7134xi6qONvh7ZHKgviXf+rd3vhGBSvebPZCaUkd8zvQ+7PtDw6CljPTe4cXWNf2IKZGNqw6VJXSb9IgBpA=="],
 
