@@ -100,8 +100,74 @@ new aws.s3.BucketObjectv2("ConnectorTemplate", {
 							}
 						]
 					},
-					ManagedPolicyArns: [
-						"arn:aws:iam::aws:policy/AdministratorAccess"
+					// Least privilege: the Console only reads SST bootstrap metadata and
+					// state objects, and turns on EventBridge notifications for the
+					// state bucket (packages/core/src/account/{state,sync}.ts).
+					Policies: [
+						{
+							PolicyName: "SSTConsoleStateAccess",
+							PolicyDocument: {
+								Version: "2012-10-17",
+								Statement: [
+									{
+										Sid: "ReadSstBootstrap",
+										Effect: "Allow",
+										Action: "ssm:GetParameter",
+										Resource: {
+											"Fn::Sub":
+												"arn:${AWS::Partition}:ssm:*:${AWS::AccountId}:parameter/sst/bootstrap"
+										}
+									},
+									{
+										Sid: "DecryptBootstrapViaSsm",
+										Effect: "Allow",
+										Action: "kms:Decrypt",
+										Resource: "*",
+										Condition: {
+											StringLike: {
+												"kms:ViaService":
+													"ssm.*.amazonaws.com"
+											}
+										}
+									},
+									{
+										Sid: "ListSstState",
+										Effect: "Allow",
+										Action: "s3:ListBucket",
+										Resource: {
+											"Fn::Sub":
+												"arn:${AWS::Partition}:s3:::sst-state-*"
+										},
+										Condition: {
+											StringLike: {
+												"s3:prefix": ["app/*", "app/"]
+											}
+										}
+									},
+									{
+										Sid: "ReadSstState",
+										Effect: "Allow",
+										Action: "s3:GetObject",
+										Resource: {
+											"Fn::Sub":
+												"arn:${AWS::Partition}:s3:::sst-state-*/app/*"
+										}
+									},
+									{
+										Sid: "EnableSstStateEvents",
+										Effect: "Allow",
+										Action: [
+											"s3:GetBucketNotification",
+											"s3:PutBucketNotification"
+										],
+										Resource: {
+											"Fn::Sub":
+												"arn:${AWS::Partition}:s3:::sst-state-*"
+										}
+									}
+								]
+							}
+						}
 					]
 				}
 			},
@@ -275,3 +341,5 @@ const connectorQuickCreateUrl = $resolve({
 		return `https://${region}.console.aws.amazon.com/cloudformation/home?region=${region}#/stacks/create/review?${query.toString()}`;
 	}
 );
+
+export const outputs = { connectorQuickCreateUrl };

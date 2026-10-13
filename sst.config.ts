@@ -6,6 +6,7 @@ export default $config({
 
 		return {
 			name: "sst-console",
+			version: "4.20.0",
 			removal: input?.stage === "prod" ? "retain" : "remove",
 			protect: ["prod"].includes(input?.stage),
 			home: "aws",
